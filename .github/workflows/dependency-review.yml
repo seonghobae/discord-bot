@@ -1,0 +1,37 @@
+---
+name: Dependency Review
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@3c4e3dcb1aa7874d2c16be7d79418e9b7efd6261
+        with:
+          comment-summary-in-pr: on-failure
+          fail-on-severity: moderate
+          # Copyleft licenses (including LGPL) are denied by repo policy.
+          deny-licenses: >-
+            GPL-1.0-only, GPL-1.0-or-later, GPL-2.0-only,
+            GPL-2.0-or-later, GPL-3.0-only, GPL-3.0-or-later,
+            AGPL-3.0-only, AGPL-3.0-or-later, LGPL-2.1-only,
+            LGPL-2.1-or-later, LGPL-3.0-only, LGPL-3.0-or-later
