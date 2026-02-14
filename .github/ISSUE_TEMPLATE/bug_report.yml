@@ -1,0 +1,45 @@
+---
+name: Bug report
+description: Report a reproducible defect
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please provide a minimal reproduction.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One-line problem summary
+      placeholder: Command X fails with Y
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps, including input and expected/actual result
+      placeholder: |
+        1. Run ...
+        2. Send ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Node/pnpm/OS/version information
+      placeholder: Node 20.x, pnpm 9.x, macOS/Linux
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Remove secrets/tokens before sharing
+    validations:
+      required: false
