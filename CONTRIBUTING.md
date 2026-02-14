@@ -16,7 +16,6 @@ pnpm install
 ## 3) Required Verification Before PR
 
 ```bash
-pnpm install
 pnpm exec tsc --noEmit
 pnpm test
 pnpm build

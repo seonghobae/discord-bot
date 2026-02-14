@@ -25,10 +25,11 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
 
       - name: Dependency Review
-        uses: actions/dependency-review-action@46a3c492319c890177366b6ef46d6b4f89743ed4
+        uses: actions/dependency-review-action@3c4e3dcb1aa7874d2c16be7d79418e9b7efd6261
         with:
           comment-summary-in-pr: on-failure
           fail-on-severity: moderate
+          # Copyleft licenses (including LGPL) are denied by repo policy.
           deny-licenses: >-
             GPL-1.0-only, GPL-1.0-or-later, GPL-2.0-only,
             GPL-2.0-or-later, GPL-3.0-only, GPL-3.0-or-later,

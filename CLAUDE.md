@@ -2,6 +2,9 @@
 
 Claude-specific working notes for this repository.
 
+Common repository policies live in `AGENTS.md`.
+This file only captures Claude-specific operating notes.
+
 ## Mission
 
 Implement safe, minimal, testable changes while preserving repository
