@@ -39,6 +39,13 @@ Thumbs.db
 *.swp
 *.swo
 
+# Local worktrees
+/.worktrees/
+
+# Local OpenCode artifacts
+/registered_agents.json
+/task_agent_mapping.json
+
 # Temporary files
 tmp/
 temp/
